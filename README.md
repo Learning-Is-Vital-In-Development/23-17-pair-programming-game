@@ -1,4 +1,4 @@
-# Kotlin Lotto
+# Pair Programming - Kotlin Lotto
 
 > 자유롭게, 하고 싶은 대로, 하고 싶은 만큼, 함께 코딩하기
 
