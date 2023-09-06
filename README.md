@@ -11,12 +11,12 @@
 
 먼저 모든 팀원은 미션 저장소를 자신의 개인 저장소로 fork 합니다.
 
-1. 기능과 관련된 적절한 이름의 branch 를 생성 후 commit 합니다.
-2. 2번의 과정이 끝나면 local 에만 변경사항이 반영되어 있으므로 본인의 remote 저장소에 push 합니다.
-3. 본인의 remote 저장소에 push 가 완료되면, github 에서 pull request 를 생성합니다.
-4. (Optional) 아직 기능이 완성되진 않았지만, 진행상황 공유 등의 이유로 PR 을 먼저 생성하고 싶다면 draft 로 만들어보세요.
-5. Ready 상태의 PR 이 생성되면 리뷰어들은 코드 리뷰를 시작합니다.
-6. 리뷰가 완료되면 assignee 는 PR 을 merge 하고, 다음 주차의 assignee 는 위 과정을 반복합니다.
+1. 기능과 관련된 적절한 이름의 branch 를 생성 후 commit 합니다
+2. 2번의 과정이 끝나면 local 에만 변경사항이 반영되어 있으므로 본인의 remote 저장소에 push 합니다
+3. 본인의 remote 저장소에 push 가 완료되면, github 에서 pull request 를 생성합니다
+4. (Optional) 아직 기능이 완성되진 않았지만, 진행상황 공유 등의 이유로 PR 을 먼저 생성하고 싶다면 draft 로 만들어보세요
+5. Ready 상태의 PR 이 생성되면 리뷰어들은 코드 리뷰를 시작합니다
+6. 리뷰가 완료되면 assignee 는 PR 을 merge 하고, 다음 주차의 assignee 는 위 과정을 반복합니다
 
 ## 규칙
 
