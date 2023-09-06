@@ -14,7 +14,7 @@ Kotlin Style 을 학습하는 이 스터디의 목표와는 맞지 않다**고 �
 
 ## Pull Request
 
-- PR 은 다음 팀원이 이어서 진행하기 쉽도록 가급적 본인이 생각하는 가장 작은 기능 단위로 생성해주세요
+- PR 은 기능 단위로 생성해주세요
     - 중간에 구현이 막혔다면, 어떤걸 하려했고 어떤 부분이 막혔는지를 대략적으로 적어두고 PR 을 생성해주세요
     - 이것밖에 구현 못했는데 괜찮나? 라고 생각하지 않아도 괜찮습니다. 그냥 마음편히 던지세요! 코드의 절대적인 양은 이 스터디에서 중요하지 않습니다
     - 기능 구현이 아니라 Refactoring 이여도 괜찮습니다
@@ -37,7 +37,8 @@ PR 을 생성하면 작성된 코드를 테스트한 뒤 커버리지 리포트�
 
 <img width="939" alt="Pasted image 20230906205436" src="https://github.com/Learning-Is-Vital-In-Development/23-17-pair-programming-game/assets/56438906/5ed8e928-297b-4d50-b5b1-0117a3cde625">
 
-만약 이전보다 커버리지가 감소한다면 Pipeline 이 실패합니다. 클래스 별 70% 이상의 커버리지여야 빌드가 가능하니 테스트에 신경써주세요. 관련 설정은 [build.gradle.kts](build.gradle.kts) 에서 확인하실 수 있습니다.
+만약 이전보다 커버리지가 감소한다면 Pipeline 이 실패합니다. 클래스 별 70% 이상의 커버리지여야 빌드가 가능하니 테스트에 신경써주세요. 관련
+설정은 [build.gradle.kts](build.gradle.kts) 에서 확인하실 수 있습니다.
 
 ```kotlin
 tasks.jacocoTestCoverageVerification {
