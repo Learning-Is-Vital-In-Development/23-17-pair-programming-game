@@ -10,6 +10,7 @@ jobs:
       pull-requests: write
     steps:
       - uses: actions/first-interaction@v1
+        name: First Greetings
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           issue-message: |
@@ -19,6 +20,7 @@ jobs:
             안녕하세요 👋 @${{ github.actor }}님! 처음으로 Pull Request 를 생성해주셨군요!
             아직 [Contribution Guide Line]() 을 살펴보지 않으셨다면 한 번쯤 읽어보시는걸 추천드려요.
       - uses: thollander/actions-comment-pull-request@v2
+        name: Greetings
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           message: |
