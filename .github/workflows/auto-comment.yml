@@ -1,0 +1,16 @@
+name: Auto Comment
+on: [ issues, pull_request ]
+jobs:
+  run:
+    permissions:
+      issues: write
+      pull-requests: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: wow-actions/auto-comment@v1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          pullRequestOpenedReactions: 'hooray, +1'
+          pullRequestOpened: |
+            👋 @{{ author }}
+            구현하시느라 고생하셨어요! 조금만 기다려주시면 리뷰어가 리뷰를 해줄거에요. 😄
