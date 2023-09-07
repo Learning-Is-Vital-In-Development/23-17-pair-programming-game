@@ -13,8 +13,6 @@ jobs:
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         issue-message: |
-          👋 @{{ author }}
           처음으로 Issue 를 생성해주셨군요! 자세한 진행방식이 궁금하시다면 [Contribution Guide Line]() 을 확인해주세요!
         pr-message: |
-          👋 @{{ author }}
           처음으로 Pull Request 를 생성해주셨군요! 아직 [Contribution Guide Line]() 을 살펴보지 않으셨다면 한 번쯤 읽어보시는걸 추천드려요.
