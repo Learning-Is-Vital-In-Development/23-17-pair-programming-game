@@ -16,16 +16,15 @@
 3. 본인의 remote 저장소에 push 가 완료되면, github 에서 pull request 를 생성합니다
 4. (Optional) 아직 기능이 완성되진 않았지만, 진행상황 공유 등의 이유로 PR 을 먼저 생성하고 싶다면 draft 로 만들어보세요
 5. Ready 상태의 PR 이 생성되면 리뷰어들은 코드 리뷰를 시작합니다
-6. 리뷰가 완료되면 assignee 는 PR 을 merge 하고, 다음 주차의 assignee 는 위 과정을 반복합니다
+6. 리뷰가 완료되면 assignee 는 PR 을 merge 하고, 위 과정을 반복합니다
 
 ## 규칙
 
-> 자세한 내용은 [Contribution Guide Line](CONTRIBUTING.md) 을 참고해주세요
+> 자세한 내용은 [Contribution Guide Line](https://github.com/Learning-Is-Vital-In-Development/23-17-pair-programming-game/blob/main/CONTRIBUTING.md) 을 참고해주세요
 
 - PR 은 다음 팀원이 이어서 진행하기 쉽도록 기능 단위로 생성해주세요
-- 테스트 코드를 작성해주세요
+- Kotest 를 사용하는 테스트 코드를 작성해주세요
 - 항상 실행가능한 상태를 유지해주세요
-- Kotest Spec 은 선호에 따라 자유롭게 사용합니다 (AnnotationSpec 제외)
 - Ktlint 는 가급적 모두 통과시켜주세요
 
 ## 가이드
