@@ -1,11 +1,11 @@
 name: Auto Comment
-on: [ issues, pull_request_target ]
+on: [ pull_request_target, issues, pull_request ]
 jobs:
   run:
+    runs-on: ubuntu-latest
     permissions:
       issues: write
       pull-requests: write
-    runs-on: ubuntu-latest
     steps:
       - uses: wow-actions/auto-comment@v1
         with:
