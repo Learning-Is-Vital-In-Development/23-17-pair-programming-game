@@ -2,7 +2,7 @@
 
 > 본 문서는 언제든 변경될 수 있습니다. Issue 를 생성해주시거나, Discord 를 통해 의견을 전달해주세요.
 
-본 문서는 원활한 스터디를 진행하기 위해 가이드라인을 구성원들에게 제공하는 것을 목표로 작성되었습니다.
+본 문서는 원활한 스터디를 진행하기 위한 가이드라인을 구성원들에게 제공하는 것을 목표로 작성되었습니다.
 
 ## Test 작성
 
@@ -65,6 +65,13 @@ Approve 가 완료되면 **다음 Assignee 가 원하는 시점에 PR 을 merge*
 
 ## Reviewer Guide
 
+코드 리뷰를 통한 커뮤니케이션은 이번 스터디의 핵심 목적이기도 합니다. 어떻게 하면 좋은 리뷰를 남길 수 있을지 함께 고민해보기 전에 참고해볼만한 자료들을 링크해두었습니다.
+
+- [코드 리뷰 코멘트는 어떻게 작성하면 좋을까? 코드 리뷰 원칙 들여보기](https://mong-blog.tistory.com/entry/Team-%EC%BD%94%EB%93%9C-%EB%A6%AC%EB%B7%B0-%EC%BD%94%EB%A9%98%ED%8A%B8%EB%8A%94-%EC%96%B4%EB%96%BB%EA%B2%8C-%EC%9E%91%EC%84%B1%ED%95%98%EB%A9%B4-%EC%A2%8B%EC%9D%84%EA%B9%8C-%EC%BD%94%EB%93%9C-%EB%A6%AC%EB%B7%B0-%EC%9B%90%EC%B9%99-%EB%93%A4%EC%97%AC%EB%B3%B4%EA%B8%B0)
+- [Best Practice 1 - zzimkkong](https://github.com/woowacourse-teams/2021-zzimkkong/pull/969)
+
+스터디 목적에 맞게 재구성해봤어요.
+
 ### 1. 리뷰는 최대한 빠르게
 
 리뷰가 최대한 빠르게 진행되어야 전체적인 흐름이 원활하게 유지될 수 있어요.
@@ -75,24 +82,32 @@ Fact(사실)와 Opinion(의견)을 구분하고, 의견이라면 합리적인 �
 
 #### 올바른 예 👍
 
-`get~` 네이밍은 최근 클린코드 개념과는 멀어지고 있다고 생각해요(의견). Java 또한 record class 를 제시하며 `get` 키워드를 제거했어요(근거). kotlin 에서는 property 라는 대안도 있으니 `get~` 보다는 property 를 사용하시는게 어떨까요?(결론)
-
-[Java 14 Record Keyword](https://www.baeldung.com/java-record-keyword) (신뢰성 있는 자료까지)
+> `get~` 네이밍은 최근 클린코드 개념과는 멀어지고 있다고 생각해요(의견).
+>
+> Java 또한 record class 를 제시하며 `get` 키워드를 제거했어요(근거).
+>
+> kotlin 에서는 property 라는 대안도 있으니 `get~` 보다는 property 를 사용하시는게 어떨까요?(결론)
+>
+> - [Java 14 Record Keyword](https://www.baeldung.com/java-record-keyword) (신뢰성 있는 자료까지)
 
 #### 안좋은 예 👎
 
-고민 중...
+> 굳이 왜 `get~` 를 사용하시나요? Kotlin 은 property 인거 모르시나요? (부정적 표현)
+>
+> 여기 수정하세요 (명령형 표현)
 
-### 3. 리뷰는 최대한 자세하게
+### 3. 리뷰는 최대한 친절하게
 
 이 스터디에서는 LGTM(Look Good To Me) 또한 얼마든지 허용할 생각이에요.
-하지만 의아한 부분이 있다면 얼마든지 자신의 의견을 적극적으로 피력해주세요! 서로의 스타일을 알아보기 위해서는 많은 이야기가 필요하니까요~
+하지만 의아한 부분이 있다면 얼마든지 자신의 의견을 적극적으로 피력해주세요! 서로의 스타일을 알아가기 위해서는 많은 이야기가 필요하니까요~
 
-정 LGTM 를 써야한다면 👍과 함께...!
+LGTM 라면 👍 이나 짤과 함께 칭찬합시다!
+
+![ghisisgood](https://github.com/Learning-Is-Vital-In-Development/23-17-pair-programming-game/assets/56438906/ccb7e040-e18e-4c14-b4ee-42d21b881fa8)
 
 ### 4. 리뷰어 지정 방식
 
-기본적으로 team 인원 모두를 지정합니다.
+기본적으로 Team 인원 모두를 지정합니다.
 
 merge 에 필요한 Approve 는 2개만 필요하니, 너무 늦게 PR 을 확인하시면 이미 merge 가 끝나있을 수 있어요~ 😂
 
