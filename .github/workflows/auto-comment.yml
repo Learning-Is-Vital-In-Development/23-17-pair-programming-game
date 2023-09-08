@@ -1,9 +1,8 @@
 name: Auto Comment
-on: [ issues, pull_request_target ]
+on: [ pull_request_target ]
 jobs:
   auto-comment:
     permissions:
-      issues: write
       pull-requests: write
     runs-on: ubuntu-latest
     steps:
