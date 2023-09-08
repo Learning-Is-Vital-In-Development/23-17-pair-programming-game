@@ -1,7 +1,7 @@
 name: Auto Comment
-on: [ issues, pull_request ]
+on: [ issues, pull_request_target ]
 jobs:
-  run:
+  auto-comment:
     permissions:
       issues: write
       pull-requests: write
