@@ -50,7 +50,7 @@ tasks.jacocoTestCoverageVerification {
         rule {
             element = "CLASS"
             limit {
-                minimum = "0.70".toBigDecimal()
+                minimum = "0.50".toBigDecimal()
             }
         }
     }

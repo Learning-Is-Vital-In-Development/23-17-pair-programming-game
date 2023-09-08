@@ -11,5 +11,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           pullRequestOpenedReactions: 'hooray, +1'
           pullRequestOpened: |
-            👋 @{{ author }}
-            구현하시느라 고생하셨어요! 조금만 기다려주시면 리뷰어가 리뷰를 해줄거에요. 😄
+            👋 @{{ author }} 님, 진행하시느라 고생하셨어요!
+            조금만 기다려주시면 리뷰가 시작될거에요. 😄
+            PR 이 리뷰를 위한 정보를 충분히 담고 있는지 마지막으로 살펴봐주시는건 어떨까요? 🤔
