@@ -3,7 +3,10 @@ package view
 import money.Money
 import java.math.BigDecimal
 
-fun <T> validInputView(supplier: () -> T, consumer: (String) -> Unit): T {
+fun <T> validInputView(
+    supplier: () -> T,
+    consumer: (String) -> Unit
+): T {
     return try {
         supplier.invoke()
     } catch (e: IllegalArgumentException) {
@@ -13,7 +16,6 @@ fun <T> validInputView(supplier: () -> T, consumer: (String) -> Unit): T {
 }
 
 class InputView {
-
     fun requestMoney(): Money {
         return Money(BigDecimal(readln().toInt()))
     }
