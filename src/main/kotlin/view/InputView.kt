@@ -5,7 +5,7 @@ import java.math.BigDecimal
 
 fun <T> validInputView(
     supplier: () -> T,
-    consumer: (String) -> Unit
+    consumer: (String) -> Unit,
 ): T {
     return try {
         supplier.invoke()
