@@ -1,4 +1,4 @@
-package lotto
+package controller
 
 import money.Money
 import view.InputView

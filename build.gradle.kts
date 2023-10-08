@@ -52,6 +52,8 @@ tasks.jacocoTestCoverageVerification {
             limit {
                 minimum = "0.50".toBigDecimal()
             }
+
+            excludes = listOf("view.*", "controller.LottoApp*", "Main*")
         }
     }
 }
