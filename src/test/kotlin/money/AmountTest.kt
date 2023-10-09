@@ -7,7 +7,9 @@ import java.math.BigDecimal
 
 class AmountTest : FunSpec({
     listOf(
-        "2400", "3000", "4000"
+        "2400",
+        "3000",
+        "4000"
     ).forEach {
         test("금액은 입력받으면 BigDecimal 자료형을 반환한다. 입력받은 금액 : $it") {
             Amount(it).stringAmount.toBigDecimal() shouldBe BigDecimal(it)
