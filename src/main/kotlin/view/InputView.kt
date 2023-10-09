@@ -1,5 +1,6 @@
 package view
 
+import money.Amount
 import java.math.BigDecimal
 
 fun <T> validInputView(
@@ -15,13 +16,8 @@ fun <T> validInputView(
 }
 
 class InputView {
-    private val integers = '0'..'9'
     fun requestAmount(): BigDecimal {
-        val amount = readln();
-        if (!isInteger(amount)) {
-            throw java.lang.IllegalArgumentException("입력한 $amount 값은 숫자여야 합니다.")
-        }
-        return amount.toBigDecimal()
+        val amount = Amount(readln())
+        return amount.getBigDecimal()
     }
-    private fun isInteger(input: String) = input.all { it in integers }
 }
