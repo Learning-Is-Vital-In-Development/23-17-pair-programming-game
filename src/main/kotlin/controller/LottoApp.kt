@@ -12,6 +12,6 @@ class LottoApp(private val inputView: InputView, private val outputView: OutputV
 
     private fun inputCapital(): Money {
         outputView.requestCapital()
-        return inputView.requestMoney()
+        return Money(inputView.requestAmount())
     }
 }
