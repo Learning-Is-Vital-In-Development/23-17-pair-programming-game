@@ -2,7 +2,7 @@ package money
 
 import java.lang.IllegalArgumentException
 
-class Amount(val stringAmount: String) {
+class Amount(private val stringAmount: String) {
     private val integers = '0'..'9'
 
     init {
