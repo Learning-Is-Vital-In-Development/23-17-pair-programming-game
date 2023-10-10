@@ -1,6 +1,6 @@
 package controller
 
-import money.Money
+import model.money.Money
 import view.InputView
 import view.OutputView
 import view.validInputView

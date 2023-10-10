@@ -1,4 +1,4 @@
-package money
+package model.money
 
 class Amount(private val stringAmount: String) {
     private val integers = '0'..'9'

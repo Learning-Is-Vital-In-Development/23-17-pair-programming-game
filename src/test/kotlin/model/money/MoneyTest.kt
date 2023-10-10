@@ -1,4 +1,4 @@
-package money
+package model.money
 
 import io.kotest.assertions.throwables.shouldThrowExactly
 import io.kotest.core.spec.style.FreeSpec
