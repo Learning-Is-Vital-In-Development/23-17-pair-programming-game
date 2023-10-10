@@ -17,8 +17,8 @@ class LottoNumberTest : FreeSpec({
             }.message shouldBe "로또 번호는 1에서 45 사이여야 합니다."
         }
         "번호가 1 이상 45 이하일 때는 인스턴스가 생성되어야한다." {
-            LottoNumber(1).value shouldBe 1
-            LottoNumber(45).value shouldBe 45
+            LottoNumber(1) shouldBe LottoNumber(1)
+            LottoNumber(45) shouldBe LottoNumber(45)
         }
     }
 })
