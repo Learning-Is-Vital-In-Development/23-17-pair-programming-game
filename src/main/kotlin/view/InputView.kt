@@ -1,6 +1,6 @@
 package view
 
-import money.Money
+import money.Amount
 import java.math.BigDecimal
 
 fun <T> validInputView(
@@ -16,7 +16,8 @@ fun <T> validInputView(
 }
 
 class InputView {
-    fun requestMoney(): Money {
-        return Money(BigDecimal(readln().toInt()))
+    fun requestAmount(): BigDecimal {
+        val amount = Amount(readln())
+        return amount.getBigDecimal()
     }
 }
