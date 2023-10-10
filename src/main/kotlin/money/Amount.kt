@@ -12,5 +12,5 @@ class Amount(private val stringAmount: String) {
 
     fun getBigDecimal() = stringAmount.toBigDecimal()
 
-    private fun isInteger(input: String) = input.all { it in integers }
+    private fun String.isInt() = this.all { it in integers }
 }
