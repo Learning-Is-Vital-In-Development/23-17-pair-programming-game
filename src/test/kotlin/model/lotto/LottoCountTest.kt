@@ -14,9 +14,10 @@ class LottoCountTest : FreeSpec(
             "돈이 충분하지 않으면 에러가 발생한다" {
                 val money = Money.ZERO
                 val manualCount = 2
-                val exception = shouldThrow<IllegalStateException> {
-                    LottoCount.of(manualCount, money)
-                }
+                val exception =
+                    shouldThrow<IllegalStateException> {
+                        LottoCount.of(manualCount, money)
+                    }
                 exception.message shouldBe NOT_ENOUGH_MONEY_MESSAGE
             }
 
