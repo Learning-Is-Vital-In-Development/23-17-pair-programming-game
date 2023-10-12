@@ -21,4 +21,12 @@ class Money(private val amount: BigDecimal) {
     operator fun times(count: Int): Money {
         return Money(amount.multiply(BigDecimal.valueOf(count.toLong())))
     }
+
+    operator fun minus(other: Money): Money {
+        return Money(amount.subtract(other.amount))
+    }
+
+    operator fun plus(other: Money): Money {
+        return Money(amount.add(other.amount))
+    }
 }
