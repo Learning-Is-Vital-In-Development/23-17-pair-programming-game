@@ -9,7 +9,7 @@ fun <T> validInputView(
 ): T {
     return try {
         supplier.invoke()
-    } catch (e: IllegalArgumentException) {
+    } catch (e: Exception) {
         consumer.invoke(e.message!!)
         validInputView(supplier, consumer)
     }
