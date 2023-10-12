@@ -9,7 +9,10 @@ class LottoCount(
     val autoCount: Int,
 ) {
     companion object {
-        fun of(manualCount: Int, money: Money): LottoCount {
+        fun of(
+            manualCount: Int,
+            money: Money,
+        ): LottoCount {
             val totalCount = money / PRICE
             val autoCount = totalCount - manualCount
             check(autoCount >= 0) { NOT_ENOUGH_MONEY_MESSAGE }
