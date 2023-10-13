@@ -1,6 +1,7 @@
 package controller
 
 import model.lotto.LottoCount
+import model.lotto.LottoNumbers
 import model.money.Money
 import view.InputView
 import view.OutputView
@@ -10,10 +11,7 @@ class LottoApp(private val inputView: InputView, private val outputView: OutputV
     fun run() {
         val money = validInputView({ inputCapital() }) { outputView.printMessage(it) }
         val lottoCount: LottoCount = validInputView({ inputManualCount(money) }) { outputView.printMessage(it) }
-
-        // 1 장으로 5게임이 가능
-
-        // 남은 금액
+        validInputView({ inputManualLottoNumber(lottoCount) }) { outputView.printMessage(it) }
     }
 
     private fun inputCapital(): Money {
@@ -25,5 +23,14 @@ class LottoApp(private val inputView: InputView, private val outputView: OutputV
         outputView.requestManualCount()
         val manualCount = inputView.requestAmount().toInt()
         return LottoCount.of(manualCount, money)
+    }
+
+    private fun inputManualLottoNumber(lottoCount: LottoCount): List<LottoNumbers> {
+        return (1..lottoCount.manualCount)
+            .map {
+                outputView.requestManualLottoNumber()
+                inputView.requestLottoNumber()
+            }
+            .map { LottoNumbers.from(it) }
     }
 }

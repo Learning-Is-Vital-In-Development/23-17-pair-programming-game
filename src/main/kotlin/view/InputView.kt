@@ -20,4 +20,8 @@ class InputView {
         val amount = Amount(readln())
         return amount.getBigDecimal()
     }
+
+    fun requestLottoNumber(): List<Int> {
+        return readln().split(" ").map { it.toInt() }
+    }
 }
