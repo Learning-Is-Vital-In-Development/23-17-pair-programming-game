@@ -69,7 +69,7 @@ val testCoverage by tasks.registering {
     dependsOn(
         ":test",
         ":jacocoTestReport",
-        ":jacocoTestCoverageVerification"
+        ":jacocoTestCoverageVerification",
     )
 
     tasks["jacocoTestReport"].mustRunAfter(tasks["test"])

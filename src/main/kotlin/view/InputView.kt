@@ -9,7 +9,7 @@ fun <T> validInputView(
 ): T {
     return try {
         supplier.invoke()
-    } catch (e: IllegalArgumentException) {
+    } catch (e: Exception) {
         consumer.invoke(e.message!!)
         validInputView(supplier, consumer)
     }
@@ -19,5 +19,9 @@ class InputView {
     fun requestAmount(): BigDecimal {
         val amount = Amount(readln())
         return amount.getBigDecimal()
+    }
+
+    fun requestLottoNumber(): List<Int> {
+        return readln().split(" ").map { it.toInt() }
     }
 }
