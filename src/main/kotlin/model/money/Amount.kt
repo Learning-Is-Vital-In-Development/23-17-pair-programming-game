@@ -1,7 +1,7 @@
 package model.money
 
-import view.EMPTY_VALUE_ERROR_MESSAGE
-import view.INVALID_NUMBER_FORMAT_MESSAGE
+internal const val EMPTY_VALUE_ERROR_MESSAGE = "값이 비어있습니다."
+internal const val INVALID_NUMBER_FORMAT_MESSAGE = "입력한 값은 숫자여야 합니다."
 
 class Amount(private val stringAmount: String) {
     private val integers = '0'..'9'

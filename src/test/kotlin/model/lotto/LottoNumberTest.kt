@@ -4,8 +4,6 @@ import io.kotest.assertions.throwables.shouldThrowExactly
 import io.kotest.core.spec.style.FreeSpec
 import io.kotest.matchers.shouldBe
 
-private const val INVALID_LOTTO_NUMBER_MESSAGE = "로또 번호는 1에서 45 사이여야 합니다."
-
 class LottoNumberTest : FreeSpec(
     {
         "LottoNumber 생성" - {

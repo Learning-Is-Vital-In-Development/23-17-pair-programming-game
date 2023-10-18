@@ -5,9 +5,6 @@ import io.kotest.core.spec.style.FreeSpec
 import io.kotest.matchers.shouldBe
 import model.money.Money
 import model.money.PRICE
-import view.NEGATIVE_NUMBER_ERROR_MESSAGE
-import view.NOT_ENOUGH_MONEY_MESSAGE
-import java.lang.IllegalArgumentException
 import java.math.BigDecimal
 
 class LottoCountTest : FreeSpec(
