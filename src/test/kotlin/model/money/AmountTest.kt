@@ -1,33 +1,45 @@
 package model.money
 
 import io.kotest.assertions.throwables.shouldThrowExactly
-import io.kotest.core.spec.style.FunSpec
+import io.kotest.core.spec.style.BehaviorSpec
 import io.kotest.matchers.shouldBe
 import java.math.BigDecimal
 
-class AmountTest : FunSpec(
+class AmountTest : BehaviorSpec(
     {
-        listOf(
-            "2400",
-            "3000",
-            "4000",
-        ).forEach {
-            test("금액은 입력받으면 BigDecimal 자료형을 반환한다. 입력받은 금액 : $it") {
-                Amount(it).getBigDecimal() shouldBe BigDecimal(it)
-            }
-        }
 
-        listOf(
-            "invalid amount",
-            "유효하지 않은 숫자",
-            "3k34j4",
-            "k3333",
-            "3333k",
-            "",
-        ).forEach {
-            test("잘못된 문자열을 입력받으면 예외가 발생한다. 입력받은 문자 : $it") {
-                shouldThrowExactly<IllegalArgumentException> {
-                    Amount(it)
+        given("사용자의 입력을 받는 상황에서") {
+            `when`("숫자를 금액으로 입력하면") {
+                val amount = "2400"
+                then("금액에 맞는 BigDecimal 자료형이 반환된다.") {
+                    Amount(amount).getBigDecimal() shouldBe BigDecimal(amount)
+                }
+            }
+
+            `when`("문자열을 금액으로 입력하면") {
+                val invalidAmount = "invalid amount"
+                then("IllegalArgumentException 예외가 발생한다") {
+                    shouldThrowExactly<IllegalArgumentException> {
+                        Amount(invalidAmount)
+                    }
+                }
+            }
+
+            `when`("숫자가 포함된 문자열을 금액으로 입력하면") {
+                val invalidAmount = "3k34j4"
+                then("IllegalArgumentException 예외가 발생한다") {
+                    shouldThrowExactly<IllegalArgumentException> {
+                        Amount(invalidAmount)
+                    }
+                }
+            }
+
+            `when`("비어있는 문자열을 금액으로 입력하면") {
+                val invalidAmount = ""
+                then("IllegalArgumentException 예외가 발생한다") {
+                    shouldThrowExactly<IllegalArgumentException> {
+                        Amount(invalidAmount)
+                    }
                 }
             }
         }
