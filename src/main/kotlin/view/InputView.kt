@@ -14,7 +14,7 @@ fun <T> validInputView(
     }
 }
 
-private const val EMPTY = " "
+private const val WHITE_SPACE = " "
 
 class InputView {
     fun requestAmount(): BigDecimal {
@@ -24,7 +24,7 @@ class InputView {
 
     fun requestLottoNumber(): List<Int> {
         return readln()
-            .split(EMPTY)
+            .split(WHITE_SPACE)
             .map { Number(it) }
             .map { it.getInt() }
     }
