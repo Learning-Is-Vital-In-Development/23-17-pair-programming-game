@@ -1,14 +1,15 @@
-package model.money
+package view
 
 import io.kotest.assertions.throwables.shouldThrowExactly
 import io.kotest.core.spec.style.BehaviorSpec
 import io.kotest.matchers.shouldBe
+import view.Amount
 import java.math.BigDecimal
 
 class AmountTest : BehaviorSpec(
     {
 
-        given("사용자의 입력을 받는 상황에서") {
+        given("금액을 입력받을 때") {
             `when`("숫자를 금액으로 입력하면") {
                 val amount = "2400"
                 then("금액에 맞는 BigDecimal 자료형이 반환된다.") {

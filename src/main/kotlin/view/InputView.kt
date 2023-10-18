@@ -1,6 +1,5 @@
 package view
 
-import model.money.Amount
 import java.math.BigDecimal
 
 fun <T> validInputView(
