@@ -1,5 +1,6 @@
 package view
 
+import model.money.Money
 import java.math.BigDecimal
 
 fun <T> validInputView(
@@ -23,6 +24,9 @@ class InputView {
     }
 
     fun requestLottoNumber(): List<Int> {
-        return readln().split(EMPTY).map { it.toInt() }
+        return readln()
+            .split(EMPTY)
+            .map { Number(it) }
+            .map { it.getInt() }
     }
 }
