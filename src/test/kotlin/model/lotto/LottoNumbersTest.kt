@@ -3,7 +3,6 @@ package model.lotto
 import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.core.spec.style.DescribeSpec
 import io.kotest.matchers.shouldBe
-import view.INVALID_LOTTO_NUMBER_COUNT_MESSAGE
 
 class LottoNumbersTest : DescribeSpec(
     {

@@ -1,6 +1,5 @@
 package view
 
-import model.money.Amount
 import java.math.BigDecimal
 
 fun <T> validInputView(
@@ -15,6 +14,8 @@ fun <T> validInputView(
     }
 }
 
+private const val WHITE_SPACE = " "
+
 class InputView {
     fun requestAmount(): BigDecimal {
         val amount = Amount(readln())
@@ -22,6 +23,9 @@ class InputView {
     }
 
     fun requestLottoNumber(): List<Int> {
-        return readln().split(" ").map { it.toInt() }
+        return readln()
+            .split(WHITE_SPACE)
+            .map { Number(it) }
+            .map { it.getInt() }
     }
 }

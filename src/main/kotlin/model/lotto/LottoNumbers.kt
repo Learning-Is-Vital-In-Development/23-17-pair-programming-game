@@ -1,6 +1,6 @@
 package model.lotto
 
-import view.INVALID_LOTTO_NUMBER_COUNT_MESSAGE
+internal const val INVALID_LOTTO_NUMBER_COUNT_MESSAGE = "로또 번호는 6개여야 합니다."
 
 class LottoNumbers private constructor(private val numbers: List<LottoNumber>) {
     companion object {

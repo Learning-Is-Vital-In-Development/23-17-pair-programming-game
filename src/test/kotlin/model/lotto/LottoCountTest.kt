@@ -5,7 +5,6 @@ import io.kotest.core.spec.style.FreeSpec
 import io.kotest.matchers.shouldBe
 import model.money.Money
 import model.money.PRICE
-import view.NOT_ENOUGH_MONEY_MESSAGE
 import java.math.BigDecimal
 
 class LottoCountTest : FreeSpec(
@@ -45,6 +44,16 @@ class LottoCountTest : FreeSpec(
                 val lottoCount = LottoCount.of(manualCount, money)
                 lottoCount.manualCount shouldBe 0
                 lottoCount.autoCount shouldBe 3
+            }
+
+            "수동 로또 수가 음수면 에러가 발생한다" {
+                val money = PRICE * 3
+                val manualCount = -1
+                val exception =
+                    shouldThrow<IllegalArgumentException> {
+                        LottoCount.of(manualCount, money)
+                    }
+                exception.message shouldBe NEGATIVE_NUMBER_ERROR_MESSAGE
             }
         }
     },

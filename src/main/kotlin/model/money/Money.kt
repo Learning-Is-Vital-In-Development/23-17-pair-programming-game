@@ -2,7 +2,7 @@ package model.money
 
 import java.math.BigDecimal
 
-private const val NON_NEGATIVE_NUMBER_ERROR_MESSAGE = "금액은 0원 이상이어야 합니다."
+internal const val NON_NEGATIVE_NUMBER_ERROR_MESSAGE = "금액은 0원 이상이어야 합니다."
 val PRICE = Money(BigDecimal.valueOf(5000))
 
 class Money(private val amount: BigDecimal) {
