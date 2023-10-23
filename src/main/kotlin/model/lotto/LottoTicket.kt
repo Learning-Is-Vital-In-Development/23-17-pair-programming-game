@@ -17,5 +17,9 @@ data class LottoTicket(
             return LottoTicket(numbers, type)
         }
     }
+
+    override fun toString(): String {
+        return numbers.toString()
+    }
 }
 
