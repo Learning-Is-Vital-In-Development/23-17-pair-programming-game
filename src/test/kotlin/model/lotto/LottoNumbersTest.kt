@@ -20,8 +20,12 @@ class LottoNumbersTest : DescribeSpec(
                 LottoNumbers.from(numbers)
             }
 
-            xit("중복된 숫자가 있으면 예외가 발생한다") {
-                TODO("Not yet implemented")
+            it("중복된 숫자가 있으면 예외가 발생한다") {
+                val numbers = listOf(1, 2, 3, 4, 5, 5)
+                val exception = shouldThrow<IllegalStateException> {
+                    LottoNumbers.from(numbers)
+                }
+                exception.message shouldBe INVALID_LOTTO_NUMBER_DUPLICATE_MESSAGE
             }
         }
     },
