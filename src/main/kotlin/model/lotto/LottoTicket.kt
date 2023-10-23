@@ -2,17 +2,17 @@ package model.lotto
 
 enum class TicketType {
     Manual,
-    Auto
+    Auto,
 }
 
 data class LottoTicket(
     val numbers: LottoNumbers,
-    val type: TicketType
+    val type: TicketType,
 ) {
     companion object {
         fun of(
             numbers: LottoNumbers,
-            type: TicketType
+            type: TicketType,
         ): LottoTicket {
             return LottoTicket(numbers, type)
         }
