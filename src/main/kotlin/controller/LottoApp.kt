@@ -16,7 +16,8 @@ class LottoApp(private val inputView: InputView, private val outputView: OutputV
         validInputView(
             {
                 val lottoTickets = inputManualLottoTickets(lottoCount)
-                outputView.printLottoTickets(lottoTickets)
+                val autoTickets = generateAutoLottoTickets(lottoCount.autoCount)
+                outputView.printLottoTickets(lottoTickets + autoTickets)
             },
         ) { outputView.printMessage(it) }
     }
@@ -39,5 +40,14 @@ class LottoApp(private val inputView: InputView, private val outputView: OutputV
                 val lottoNumbers = LottoNumbers.from(inputView.requestLottoNumber())
                 LottoTicket.of(lottoNumbers, TicketType.Manual)
             }
+    }
+
+    private fun generateAutoLottoTickets(autoCount: Int): List<LottoTicket> {
+        val allPossibleNumbers = (1..45).toList()
+        return List(autoCount) {
+            val selectedNumbers = allPossibleNumbers.shuffled().take(6)
+            val lottoNumbers = LottoNumbers.from(selectedNumbers)
+            LottoTicket(lottoNumbers, TicketType.Auto)
+        }
     }
 }
