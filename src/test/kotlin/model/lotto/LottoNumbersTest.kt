@@ -24,8 +24,8 @@ class LottoNumbersTest : DescribeSpec(
                 val numbers = listOf(1, 2, 3, 4, 5, 5)
                 val exception =
                     shouldThrow<IllegalStateException> {
-                    LottoNumbers.from(numbers)
-                }
+                        LottoNumbers.from(numbers)
+                    }
                 exception.message shouldBe INVALID_LOTTO_NUMBER_DUPLICATE_MESSAGE
             }
         }
