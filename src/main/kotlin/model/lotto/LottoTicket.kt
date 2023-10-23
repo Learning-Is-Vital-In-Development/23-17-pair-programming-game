@@ -23,3 +23,13 @@ data class LottoTicket(
     }
 }
 
+object LottoTicketGenerator {
+    fun generate(count: Int): List<LottoTicket> {
+        val allPossibleNumbers = (1..45).toList()
+        return List(count) {
+            val selectedNumbers = allPossibleNumbers.shuffled().take(6).sorted()
+            val lottoNumbers = LottoNumbers.from(selectedNumbers)
+            LottoTicket.of(lottoNumbers, TicketType.Auto)
+        }
+    }
+}
