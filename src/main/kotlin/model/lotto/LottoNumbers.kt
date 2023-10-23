@@ -10,4 +10,8 @@ class LottoNumbers private constructor(private val numbers: List<LottoNumber>) {
             return LottoNumbers(lottoNumbers)
         }
     }
+
+    override fun toString(): String {
+        return numbers.joinToString(separator = ", ", prefix = "[", postfix = "]") { it.toString() }
+    }
 }

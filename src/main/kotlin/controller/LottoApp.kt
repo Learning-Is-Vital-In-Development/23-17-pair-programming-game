@@ -2,6 +2,8 @@ package controller
 
 import model.lotto.LottoCount
 import model.lotto.LottoNumbers
+import model.lotto.LottoTicket
+import model.lotto.TicketType
 import model.money.Money
 import view.InputView
 import view.OutputView
@@ -11,7 +13,12 @@ class LottoApp(private val inputView: InputView, private val outputView: OutputV
     fun run() {
         val money = validInputView({ inputCapital() }) { outputView.printMessage(it) }
         val lottoCount: LottoCount = validInputView({ inputManualCount(money) }) { outputView.printMessage(it) }
-        validInputView({ inputManualLottoNumber(lottoCount) }) { outputView.printMessage(it) }
+        validInputView(
+            {
+                val lottoTickets = inputManualLottoTickets(lottoCount)
+                outputView.printLottoTickets(lottoTickets)
+            },
+        ) { outputView.printMessage(it) }
     }
 
     private fun inputCapital(): Money {
@@ -25,12 +32,12 @@ class LottoApp(private val inputView: InputView, private val outputView: OutputV
         return LottoCount.of(manualCount, money)
     }
 
-    private fun inputManualLottoNumber(lottoCount: LottoCount): List<LottoNumbers> {
+    private fun inputManualLottoTickets(lottoCount: LottoCount): List<LottoTicket> {
         return (1..lottoCount.manualCount)
             .map {
                 outputView.requestManualLottoNumber()
-                inputView.requestLottoNumber()
+                val lottoNumbers = LottoNumbers.from(inputView.requestLottoNumber())
+                LottoTicket.of(lottoNumbers, TicketType.Manual)
             }
-            .map { LottoNumbers.from(it) }
     }
 }
