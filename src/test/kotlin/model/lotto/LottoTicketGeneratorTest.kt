@@ -14,10 +14,11 @@ class LottoTicketGeneratorTest : FreeSpec(
             }
 
             "수동 티켓 생성" {
-                val manualNumbers = listOf(
-                    LottoNumbers.from(listOf(1, 2, 3, 4, 5, 6)),
-                    LottoNumbers.from(listOf(7, 8, 9, 10, 11, 12)),
-                )
+                val manualNumbers =
+                    listOf(
+                        LottoNumbers.from(listOf(1, 2, 3, 4, 5, 6)),
+                        LottoNumbers.from(listOf(7, 8, 9, 10, 11, 12)),
+                    )
                 val tickets = LottoTicketGenerator.generate(manualNumbers)
 
                 tickets.size shouldBe manualNumbers.size
