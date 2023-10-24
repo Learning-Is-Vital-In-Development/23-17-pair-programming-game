@@ -21,7 +21,6 @@ class LottoTicketGeneratorTest : FreeSpec(
                 val tickets = LottoTicketGenerator.generate(manualNumbers)
 
                 tickets.size shouldBe manualNumbers.size
-
                 tickets.forEach { it.type shouldBe TicketType.Manual }
             }
         }
