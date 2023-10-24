@@ -13,14 +13,6 @@ class LottoNumbers private constructor(private val numbers: List<LottoNumber>) {
         }
     }
 
-    fun countDistinctNumbers(): Int {
-        return numbers.distinct().size
-    }
-
-    fun countNumbers(): Int {
-        return numbers.size
-    }
-
     override fun toString(): String {
         return numbers.joinToString(separator = ", ", prefix = "[", postfix = "]") { it.toString() }
     }
