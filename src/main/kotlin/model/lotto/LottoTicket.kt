@@ -32,4 +32,10 @@ object LottoTicketGenerator {
             LottoTicket.of(lottoNumbers, TicketType.Auto)
         }
     }
+
+    fun generate(manualNumbers: List<LottoNumbers>): List<LottoTicket> {
+        return manualNumbers.map { lottoNumbers ->
+            LottoTicket.of(lottoNumbers, TicketType.Manual)
+        }
+    }
 }
