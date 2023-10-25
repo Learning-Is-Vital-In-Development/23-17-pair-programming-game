@@ -2,6 +2,8 @@ package controller
 
 import model.lotto.LottoCount
 import model.lotto.LottoNumbers
+import model.lotto.LottoTicket
+import model.lotto.LottoTicketGenerator
 import model.money.Money
 import view.InputView
 import view.OutputView
@@ -10,8 +12,13 @@ import view.validInputView
 class LottoApp(private val inputView: InputView, private val outputView: OutputView) {
     fun run() {
         val money = validInputView({ inputCapital() }) { outputView.printMessage(it) }
-        val lottoCount: LottoCount = validInputView({ inputManualCount(money) }) { outputView.printMessage(it) }
-        validInputView({ inputManualLottoNumber(lottoCount) }) { outputView.printMessage(it) }
+        val lottoCount: LottoCount = validInputView({ requestManualCount(money) }) { outputView.printMessage(it) }
+        validInputView(
+            {
+                val lottoTickets = generateLottoTickets(lottoCount)
+                outputView.printLottoTickets(lottoTickets)
+            },
+        ) { outputView.printMessage(it) }
     }
 
     private fun inputCapital(): Money {
@@ -19,18 +26,23 @@ class LottoApp(private val inputView: InputView, private val outputView: OutputV
         return Money(inputView.requestAmount())
     }
 
-    private fun inputManualCount(money: Money): LottoCount {
+    private fun requestManualCount(money: Money): LottoCount {
         outputView.requestManualCount()
         val manualCount = inputView.requestAmount().toInt()
         return LottoCount.of(manualCount, money)
     }
 
-    private fun inputManualLottoNumber(lottoCount: LottoCount): List<LottoNumbers> {
-        return (1..lottoCount.manualCount)
-            .map {
-                outputView.requestManualLottoNumber()
-                inputView.requestLottoNumber()
-            }
-            .map { LottoNumbers.from(it) }
+    private fun generateLottoTickets(lottoCount: LottoCount): List<LottoTicket> {
+        val manualTicketNumbers = requestManualLottoNumbers(lottoCount.manualCount)
+        val manualTickets = LottoTicketGenerator.generate(manualTicketNumbers)
+        val autoTickets = LottoTicketGenerator.generate(lottoCount.autoCount)
+        return manualTickets + autoTickets
+    }
+
+    private fun requestManualLottoNumbers(manualCount: Int): List<LottoNumbers> {
+        return (1..manualCount).map {
+            outputView.requestManualLottoNumber()
+            LottoNumbers.from(inputView.requestLottoNumber())
+        }
     }
 }

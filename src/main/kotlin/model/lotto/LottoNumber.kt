@@ -6,4 +6,8 @@ data class LottoNumber(private val value: Int) {
     init {
         require(value in 1..45) { INVALID_LOTTO_NUMBER_MESSAGE }
     }
+
+    override fun toString(): String {
+        return value.toString()
+    }
 }
