@@ -23,7 +23,7 @@ data class LottoGame(
     }
 }
 
-object LottoTicketGenerator {
+object LottoGameGenerator {
     fun generate(count: Int): List<LottoGame> {
         val allPossibleNumbers = (1..45).toList()
         return List(count) {
