@@ -18,12 +18,19 @@ class LottoApp(private val inputView: InputView, private val outputView: OutputV
 
         // 당첨 번호 입력
         val winningNumbers = validInputView({ inputWinningNumber() }) { outputView.printMessage(it) }
+        // 보너스 볼 입력
+        val bonusNumber = validInputView({ inputBonusNumber() }) { outputView.printMessage(it) }
 
         // 당첨 계산
         // GameResult()
 
         // 결과 출력
         // print(gameResult)
+    }
+
+    private fun inputBonusNumber(): LottoNumber {
+        outputView.requestBonusNumber()
+        return LottoNumber(inputView.requestBonusNumber())
     }
 
     private fun inputWinningNumber(): LottoNumbers {
