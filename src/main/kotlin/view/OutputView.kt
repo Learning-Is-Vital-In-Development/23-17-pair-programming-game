@@ -1,6 +1,6 @@
 package view
 
-import model.lotto.LottoTicket
+import model.lotto.LottoGame
 import model.lotto.TicketType
 
 internal const val INPUT_MONEY_MESSAGE = "구입금액을 입력해 주세요."
@@ -26,9 +26,9 @@ class OutputView {
         println(INPUT_LOTTO_NUMBER_MESSAGE)
     }
 
-    fun printLottoTickets(lottoTickets: List<LottoTicket>) {
-        val manualTickets = lottoTickets.filter { it.type == TicketType.Manual }
-        val autoTickets = lottoTickets.filter { it.type == TicketType.Auto }
+    fun printLottoTickets(lottoGames: List<LottoGame>) {
+        val manualTickets = lottoGames.filter { it.type == TicketType.Manual }
+        val autoTickets = lottoGames.filter { it.type == TicketType.Auto }
         println("수동으로 ${manualTickets.size}장, 자동으로 ${autoTickets.size}장을 구매하셨습니다.")
         if (manualTickets.isNotEmpty()) {
             println("수동으로 구매한 로또 번호")
