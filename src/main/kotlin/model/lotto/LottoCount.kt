@@ -1,7 +1,7 @@
 package model.lotto
 
-import model.money.Money
 import model.money.LOTTO_PRICE
+import model.money.Money
 
 internal const val NEGATIVE_NUMBER_ERROR_MESSAGE = "입력한 값은 숫자여야 합니다."
 internal const val NOT_ENOUGH_MONEY_MESSAGE = "금액이 부족합니다"

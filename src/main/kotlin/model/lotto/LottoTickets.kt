@@ -2,7 +2,7 @@ package model.lotto
 
 // LottoTicket 의 일급 컬렉션
 class LottoTickets(
-    val elements: List<LottoTicket>
+    val elements: List<LottoTicket>,
 ) {
     companion object {
         fun of(elements: List<LottoTicket>): LottoTickets {

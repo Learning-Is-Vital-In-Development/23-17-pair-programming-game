@@ -13,7 +13,10 @@ enum class Rank(earningMoney: Money) {
     ;
 
     companion object {
-        fun of(matchCount: Int, bonusMatch: Boolean): Rank {
+        fun of(
+            matchCount: Int,
+            bonusMatch: Boolean,
+        ): Rank {
             return when (matchCount) {
                 6 -> FIRST
                 5 -> if (bonusMatch) SECOND else THIRD

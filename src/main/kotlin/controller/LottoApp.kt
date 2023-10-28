@@ -1,6 +1,5 @@
 package controller
 
-import model.GameResult
 import model.lotto.*
 import model.money.Money
 import view.InputView

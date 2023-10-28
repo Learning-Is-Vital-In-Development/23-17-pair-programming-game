@@ -3,8 +3,8 @@ package model.lotto
 import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.core.spec.style.FreeSpec
 import io.kotest.matchers.shouldBe
-import model.money.Money
 import model.money.LOTTO_PRICE
+import model.money.Money
 import java.math.BigDecimal
 
 class LottoCountTest : FreeSpec(
