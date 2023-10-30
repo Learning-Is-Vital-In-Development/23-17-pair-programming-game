@@ -1,6 +1,11 @@
 package controller
 
-import model.lotto.*
+import model.lotto.LottoCount
+import model.lotto.LottoGameGenerator
+import model.lotto.LottoNumber
+import model.lotto.LottoNumbers
+import model.lotto.LottoTickets
+import model.lotto.WinningNumbers
 import model.money.Money
 import view.InputView
 import view.OutputView
