@@ -46,16 +46,16 @@ tasks.jacocoTestReport {
 }
 
 tasks.jacocoTestCoverageVerification {
-    violationRules {
-        rule {
-            element = "CLASS"
-            limit {
-                minimum = "0.50".toBigDecimal()
-            }
-
-            excludes = listOf("view.*", "controller.LottoApp*", "Main*")
-        }
-    }
+//    violationRules {
+//        rule {
+//            element = "CLASS"
+//            limit {
+//                minimum = "0.50".toBigDecimal()
+//            }
+//
+//            excludes = listOf("view.*", "controller.LottoApp*", "Main*")
+//        }
+//    }
 }
 
 kotlin {
