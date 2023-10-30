@@ -29,5 +29,28 @@ class LottoNumbersTest : DescribeSpec(
                 exception.message shouldBe INVALID_LOTTO_NUMBER_DUPLICATE_MESSAGE
             }
         }
+
+        describe("일치하는 LottoNumber 의 개수를 반환한다") {
+            it("모든 숫자 일치") {
+                val numbers = listOf(1, 2, 3, 4, 5, 6)
+                val lottoNumbers = LottoNumbers.from(numbers)
+                val winningNumbers = LottoNumbers.from(listOf(1, 2, 3, 4, 5, 6))
+                lottoNumbers.matchCount(winningNumbers) shouldBe 6
+            }
+
+            it("순서는 상관없다") {
+                val numbers = listOf(1, 2, 3, 4, 5, 6)
+                val lottoNumbers = LottoNumbers.from(numbers)
+                val winningNumbers = LottoNumbers.from(listOf(6, 5, 4, 3, 2, 1))
+                lottoNumbers.matchCount(winningNumbers) shouldBe 6
+            }
+
+            it("일치하는 숫자가 없다") {
+                val numbers = listOf(1, 2, 3, 4, 5, 6)
+                val lottoNumbers = LottoNumbers.from(numbers)
+                val winningNumbers = LottoNumbers.from(listOf(7, 8, 9, 10, 11, 12))
+                lottoNumbers.matchCount(winningNumbers) shouldBe 0
+            }
+        }
     },
 )

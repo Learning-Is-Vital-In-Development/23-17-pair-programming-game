@@ -13,6 +13,14 @@ class LottoNumbers private constructor(private val numbers: List<LottoNumber>) {
         }
     }
 
+    fun matchCount(winningNumbers: LottoNumbers): Int {
+        return numbers.count { winningNumbers.numbers.contains(it) }
+    }
+
+    fun matchBonus(bonusNumber: LottoNumber): Boolean {
+        return numbers.contains(bonusNumber)
+    }
+
     override fun toString(): String {
         return numbers.joinToString(separator = ", ", prefix = "[", postfix = "]") { it.toString() }
     }

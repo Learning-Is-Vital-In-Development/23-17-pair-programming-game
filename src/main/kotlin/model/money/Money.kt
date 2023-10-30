@@ -3,7 +3,7 @@ package model.money
 import java.math.BigDecimal
 
 internal const val NON_NEGATIVE_NUMBER_ERROR_MESSAGE = "금액은 0원 이상이어야 합니다."
-val PRICE = Money(BigDecimal.valueOf(5000))
+val LOTTO_PRICE = Money(BigDecimal.valueOf(1000))
 
 class Money(private val amount: BigDecimal) {
     init {

@@ -28,4 +28,8 @@ class InputView {
             .map { Number(it) }
             .map { it.getInt() }
     }
+
+    fun requestBonusNumber(): Int {
+        return Number(readln()).getInt()
+    }
 }
