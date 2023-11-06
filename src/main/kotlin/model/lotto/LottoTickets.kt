@@ -8,7 +8,7 @@ class LottoTickets(
         fun of(manualNumbers: List<LottoNumbers>, autoNumbers: List<LottoNumbers>): LottoTickets {
             val manualGames = manualNumbers.map { LottoGame.Manual(it) }.toList()
             val autoGames = autoNumbers.map { LottoGame.Auto(it) }.toList()
-            val tickets = (manualGames + autoGames).chunked(5).map { LottoTicket.of(it) }
+            val tickets = (manualGames + autoGames).chunked(5).map { LottoTicket(it) }
             return LottoTickets(tickets)
         }
     }
