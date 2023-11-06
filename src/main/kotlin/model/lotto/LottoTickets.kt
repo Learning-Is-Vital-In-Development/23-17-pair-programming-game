@@ -6,8 +6,9 @@ class LottoTickets(
 ) {
     companion object {
         fun of(manualNumbers: List<LottoNumbers>, autoNumbers: List<LottoNumbers>): LottoTickets {
-            val lottoNumbers = manualNumbers + autoNumbers
-            val tickets = lottoNumbers.chunked(5).map { LottoTicket.of(it) }
+            val manualGames = manualNumbers.map { LottoGame.Manual(it) }.toList()
+            val autoGames = autoNumbers.map { LottoGame.Auto(it) }.toList()
+            val tickets = (manualGames + autoGames).chunked(5).map { LottoTicket.of(it) }
             return LottoTickets(tickets)
         }
     }

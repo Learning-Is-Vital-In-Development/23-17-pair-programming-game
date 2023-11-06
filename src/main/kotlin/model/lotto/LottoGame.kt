@@ -1,22 +1,8 @@
 package model.lotto
 
-enum class TicketType {
-    Manual,
-    Auto,
-}
-
-data class LottoGame(
-    val numbers: LottoNumbers,
-    val type: TicketType,
-) {
-    companion object {
-        fun of(
-            numbers: LottoNumbers,
-            type: TicketType,
-        ): LottoGame {
-            return LottoGame(numbers, type)
-        }
-    }
+sealed class LottoGame(val numbers: LottoNumbers) {
+    class Manual(manualNumbers: LottoNumbers) : LottoGame(manualNumbers)
+    class Auto(autoNumbers: LottoNumbers) : LottoGame(autoNumbers)
 
     override fun toString(): String {
         return numbers.toString()
