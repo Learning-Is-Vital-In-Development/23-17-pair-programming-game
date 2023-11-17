@@ -1,7 +1,6 @@
 package controller
 
 import model.lotto.LottoCount
-import model.lotto.LottoGameGenerator
 import model.lotto.LottoNumber
 import model.lotto.LottoNumbers
 import model.lotto.LottoTickets
@@ -50,18 +49,27 @@ class LottoApp(private val inputView: InputView, private val outputView: OutputV
         return LottoCount.of(manualCount, money)
     }
 
-    // FIXME: 테스트 용이성이나 객체지향 관점에서 Ticket 은 LottoTicket 이 직접 생성해줘야하지 않을까요?
     private fun generateLottoTicket(lottoCount: LottoCount): LottoTickets {
         val manualNumbers = requestManualLottoNumbers(lottoCount.manualCount)
-        val manualGames = LottoGameGenerator.generate(manualNumbers)
-        val autoGames = LottoGameGenerator.generate(lottoCount.autoCount)
-        return LottoTickets.createWithGames(manualGames + autoGames)
+        val autoNumbers = requestAutoLottoNumbers(lottoCount.autoCount)
+        return LottoTickets.of(manualNumbers, autoNumbers)
     }
 
     private fun requestManualLottoNumbers(manualCount: Int): List<LottoNumbers> {
         return (1..manualCount).map {
             outputView.requestManualLottoNumber()
             LottoNumbers.from(inputView.requestLottoNumber())
+        }
+    }
+
+    private fun requestAutoLottoNumbers(autoCount: Int): List<LottoNumbers> {
+        val allPossibleNumbers = (1..45).toList()
+        return List(autoCount) {
+            val selectedNumbers = allPossibleNumbers
+                .shuffled()
+                .take(6)
+                .sorted()
+            LottoNumbers.from(selectedNumbers)
         }
     }
 }
